@@ -1,22 +1,19 @@
 # Node-App-Deployment
-Step by step process for MERN stack deployment
-
-
-Connecting to the VPS
 To connect your VPS server, you can use your server IP, you can create a root password and enter the server with your IP address and password credentials. But the more secure way is using an SSH key.
 
-Creating SSH Key
-For MAC OS / Linux / Windows 10 (with openssh)
-Launch the Terminal app.
+### Creating SSH Key
+#### For MAC OS / Linux / Windows 10 (with openssh)
+1. Launch the Terminal app.
 
-ssh-keygen -t rsa
+2. ```ssh-keygen -t rsa```
 
-Press ENTER to store the key in the default folder /Users/lamadev/.ssh/id_rsa).
+3. Press ```ENTER``` to store the key in the default folder /Users/lamadev/.ssh/id_rsa).
 
-Type a passphrase (characters will not appear in the terminal).
+4. Type a passphrase (characters will not appear in the terminal).
 
-Confirm your passphrase to finish SSH Keygen. You should get an output that looks something like this:
+5. Confirm your passphrase to finish SSH Keygen. You should get an output that looks something like this:
 
+```
 Your public key has been saved in /Users/lamadev/.ssh/id_rsa.pub.
 The key fingerprint is:
 ae:89:72:0b:85:da:5a:f4:7c:1f:c2:43:fd:c6:44:30 lamadev@mac.local
@@ -32,23 +29,32 @@ The key's randomart image is:
 | o...o * o       |
 |.  oo.o .        |
 +-----------------+ 
-Copy your public SSH Key to your clipboard using the following code: pbcopy < ~/.ssh/id_rsa.pub
-For Windows
-Download PuTTY and PuTTYgen.
-Open up PuTTYgen and click the Generate.
-Copy your key.
-Enter a key passphrase and confirm.
-Save the private key.
-Connection
+```
+
+6. Copy your public SSH Key to your clipboard using the following code: ```pbcopy < ~/.ssh/id_rsa.pub```
+
+
+#### For Windows
+1. Download PuTTY and PuTTYgen.
+2. Open up PuTTYgen and click the ```Generate```.
+4. Copy your key.
+5. Enter a key passphrase and confirm.
+6. Save the private key.
+
+
+### Connection
 After copying the SSH Key go the to hosting service provider dashboard and paste your key and save. After,
 
-For MAC OS / Linux
-ssh root@<server ip address> 
-For Windows
-Open the PuTTY app.
-Enter your IP address.
-Open the following section: Connection - SSH - Auth
-Browse the folders and choose your private key.
+###### For MAC OS / Linux
+```ssh root@<server ip address> ```
+
+##### For Windows
+1. Open the PuTTY app.
+2. Enter your IP address.
+3. Open the following section: Connection - SSH - Auth
+4. Browse the folders and choose your private key.
+
+
 First Configuration
 Deleting apache server
 systemctl stop apache2
